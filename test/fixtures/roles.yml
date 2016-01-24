@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tech: 1
+  checkout: 1
+  ta_grader: 1
+  supervisor: 1
+
+two:
+  tech: 1
+  checkout: 1
+  ta_grader: 1
+  supervisor: 1
