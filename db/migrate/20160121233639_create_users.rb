@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :firstName
       t.string :lastName
       t.string :email
-      t.integer :supervisor
 
       t.timestamps null: false
     end
