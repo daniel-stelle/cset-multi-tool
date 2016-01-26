@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(version: 20160124012328) do
 
   create_table "roles", force: :cascade do |t|
-    t.integer  "tech"
-    t.integer  "checkout"
-    t.integer  "ta_grader"
-    t.integer  "supervisor"
+    t.boolean  "tech"
+    t.boolean  "checkout"
+    t.boolean  "ta_grader"
+    t.boolean  "supervisor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

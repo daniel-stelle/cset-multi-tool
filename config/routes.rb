@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'help'        => 'static_pages#help'
   get 'about'       => 'static_pages#about'
   get 'add_student' => 'users#new'
+  resources :users
 end

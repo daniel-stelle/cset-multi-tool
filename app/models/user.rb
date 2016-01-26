@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  belongs_to :role
   
   ### Before Actions ###
   
@@ -21,7 +22,15 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
   #--------------------#
-                    
+  
+  # @roles = %w["Role1", "Role2", "Role3"]
+  
+  # @roles.each do |role|
+  #   self.send :define_method "#{role}?"
+  #     return self.role <= some_val
+  #   end
+  # end
+     
   private
     def down_case_email
       self.email = email.downcase
