@@ -1,1 +1,5 @@
-# empty
+daniel:
+  firstName:       Daniel
+  lastName:        Stelle
+  email:           daniel.stelle@oit.edu
+  password_digest: <%= User.digest('password') %>

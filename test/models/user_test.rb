@@ -4,7 +4,7 @@ class UserTest < ActiveSupport::TestCase
   
   def setup
     @user = User.new(firstName: "Daniel", lastName: "Stelle", 
-                     email: "daniel.stelle@oit.edu",
+                     email: "stelle.daniel@oit.edu",
                      password: "password", password_confirmation: "password")
   end
   
@@ -68,5 +68,9 @@ class UserTest < ActiveSupport::TestCase
   test "password should have a minimum length" do
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
+  end
+  
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?('')
   end
 end

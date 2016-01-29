@@ -1,5 +1,6 @@
 <% provide(:title, 'Add Student') %>
 <h1>Add Student</h1>
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
@@ -21,15 +22,28 @@
       <%= f.password_field :password_confirmation, class: 'form-cotrol' %>
       
       <div class="role_checks">
+        <h2>Student Worker Roles</h2>
+        
         <%= f.fields_for :role do |builder| %>
-          <%= builder.label :tech, "Lab Technician" %>
-          <%= builder.check_box :tech %> 
+        
+          <!-- Lab Technician role checkbox -->
+          <%= builder.label :tech, class: "checkbox inline" do %>
+            <%= builder.check_box :tech %>
+            <span>Lab Technician</span>
+          <% end %>
           
-          <%= builder.label :checkout, "Equipment Checkout" %>
-          <%= builder.check_box :checkout %>
+          <!-- Equipment Checkout role checkbox -->
+          <%= builder.label :checkout, class: "checkbox inline" do %>
+            <%= builder.check_box :checkout %>
+            <span>Equipment Checkout</span>
+          <% end %>
           
-          <%= builder.label :ta_grader, "Lab TA/Grader" %>
-          <%= builder.check_box :ta_grader %>
+          <!-- Lab TA/Grader role checkbox -->
+          <%= builder.label :ta_grader, class: "checkbox inline" do %>
+            <%= builder.check_box :ta_grader %>
+            <span>Lab TA/Grader</span>
+          <% end %>
+          
         <% end %>
       </div>
 

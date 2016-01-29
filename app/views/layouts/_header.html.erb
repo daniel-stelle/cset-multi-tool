@@ -1,11 +1,40 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
+    <!-- Logo button (top left) -->
     <%= link_to "CSET MULTI-TOOL", root_path, id: "logo" %>
+    
+    <!-- Upper nav bar -->
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   root_path %></li>
-        <li><%= link_to "Help",   help_path %></li>
-        <li><%= link_to "Log in", '#' %></li>
+        <li><%= link_to "Home",   root_path %></li> <!-- Home link -->
+        <li><%= link_to "Help",   help_path %></li> <!-- Help link -->
+        
+        <!-- Determines what links to display on the drop down depending on if the user is logged in or not -->
+        <% if logged_in? %>
+          <li><%= link_to "Users", '#' %></li> <!-- All Users link -->
+          
+          <!-- Dropdown menu -->
+          <li class="dropdown">
+            <!-- Dropdown button with down caret-->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            
+            <!-- Menu items -->
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li> <!-- Profile button -->
+              <li><%= link_to "Settings", '#' %></li>         <!-- Settings button -->
+              
+              <!-- Divider line -->
+              <li class="divider"></li>
+              
+              <!-- Logout button -->
+              <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li> <!-- Login button -->
+        <% end %>
       </ul>
     </nav>
   </div>

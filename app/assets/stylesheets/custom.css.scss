@@ -56,7 +56,7 @@ h1
 
 h2 
 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     letter-spacing: -1px;
     margin-bottom: 30px;
     text-align: center;
@@ -224,8 +224,49 @@ input
     }
 }
 
+.checkbox 
+{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    
+    span 
+    {
+        margin-left: 20px;
+        font-weight: normal;
+    }
+}
+
+#session_remember_me 
+{
+    width: auto;
+    margin-left: 0;
+}
+
 .role_checks
 {
-    float: left;
-    padding: 0;
+    margin: 40px auto;
+    width: 300px;
+    min-height: 100px;
+    padding: 10px;
+    padding-top: 2px;
+    float: center;
+    position:relative;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius:20px;
+    background: $gray-medium-light;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+#user_role_tech, #user_role_checkout, #user_role_ta_grader
+{
+    // Checkbox scaling
+    -ms-transform: scale(1.25); /* IE */
+    -moz-transform: scale(1.25); /* FF */
+    -webkit-transform: scale(1.25); /* Safari and Chrome */
+    -o-transform: scale(1.25); /* Opera */
+    padding: 10px;
+    
+    // Position
+    width: auto;
+    margin-left: 0;
 }
