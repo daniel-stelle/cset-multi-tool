@@ -25,6 +25,6 @@ class AddStudentTest < ActionDispatch::IntegrationTest
                                             password: "password",
                                             password_confirmation: "password" }
     end
-    assert_template 'users/show'
+    assert_template 'static_pages/home'
   end
 end

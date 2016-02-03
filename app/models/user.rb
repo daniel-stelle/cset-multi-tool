@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  belongs_to :role
+  has_one :role, dependent: :destroy
+  
+  accepts_nested_attributes_for :role
   
   attr_accessor :remember_token
   
@@ -22,7 +24,7 @@ class User < ActiveRecord::Base
                     
   # Password Validations
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   #--------------------#
   
   ### Functions ###

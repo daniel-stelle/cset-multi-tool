@@ -1,4 +1,3 @@
 class Role < ActiveRecord::Base
-  has_many :users, :dependent => :destroy
-  accepts_nested_attributes_for :users
+  belongs_to :user
 end

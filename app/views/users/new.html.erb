@@ -18,14 +18,13 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-cotrol' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "Password Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-cotrol' %>
       
-      <div class="role_checks">
+      <div class="role_box">
         <h2>Student Worker Roles</h2>
         
         <%= f.fields_for :role do |builder| %>
-        
           <!-- Lab Technician role checkbox -->
           <%= builder.label :tech, class: "checkbox inline" do %>
             <%= builder.check_box :tech %>
@@ -47,7 +46,7 @@
         <% end %>
       </div>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Add Student Worker", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

@@ -23,7 +23,7 @@
             <!-- Menu items -->
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li> <!-- Profile button -->
-              <li><%= link_to "Settings", '#' %></li>         <!-- Settings button -->
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>         <!-- Settings button -->
               
               <!-- Divider line -->
               <li class="divider"></li>

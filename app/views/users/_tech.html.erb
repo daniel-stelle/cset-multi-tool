@@ -1,0 +1,11 @@
+<div class="role_options">
+  <h3>Lab Technician</h3>
+  <div class="links list-group">
+    <%= link_to "Timesheet",      '#', class: "list-group-item btn btn-primary link-item" %>
+    <%= link_to "Diagnostic Log", '#', class: "list-group-item btn btn-primary link-item" %>
+    
+    <% unless @user.role.checkout? %>
+      <%= link_to "Checkout Log", '#', class: "list-group-item btn btn-primary link-item" %>
+    <% end %>
+  </div>
+</div>

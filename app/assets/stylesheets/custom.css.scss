@@ -168,24 +168,13 @@ aside
         
         h1 
         {
-            font-size: 1.4em;
-            text-align: left;
+            font-size: 35px;
+            text-align: center;
             letter-spacing: -1px;
             margin-bottom: 3px;
             margin-top: 0px;
         }
     }
-}
-
-.gravatar 
-{
-    float: left;
-    margin-right: 10px;
-}
-
-.gravatar_edit 
-{
-    margin-top: 15px;
 }
 
 /*** forms ***/
@@ -242,7 +231,7 @@ input
     margin-left: 0;
 }
 
-.role_checks
+.role_box
 {
     margin: 40px auto;
     width: 300px;
@@ -257,7 +246,28 @@ input
     -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
-#user_role_tech, #user_role_checkout, #user_role_ta_grader
+.role_options
+{
+    margin: 40px auto;
+    width: 300px;
+    min-height: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    //text-align: center;
+    position:relative;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius:20px;
+    background: $gray-medium-light;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    
+    h3
+    {
+        text-align: center;
+    }
+}
+
+#user_role_attributes_tech, #user_role_attributes_checkout, #user_role_attributes_ta_grader
 {
     // Checkbox scaling
     -ms-transform: scale(1.25); /* IE */
@@ -269,4 +279,22 @@ input
     // Position
     width: auto;
     margin-left: 0;
+}
+
+.list-group
+{
+    padding-right: 10px;
+    margin: 2px;
+}
+
+.list-group-item
+{
+    padding-bottom: 10px;
+    margin: 4px;
+    background-color: #93d1e6;
+    
+    &:hover
+    {
+        background-color: #49bce3 !important; // Figure out how to overwrite bootstrap instead of !important
+    }
 }
