@@ -1,13 +1,15 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <!-- Logo button (top left) -->
-    <%= link_to "CSET MULTI-TOOL", root_path, id: "logo" %>
+    <% if logged_in? %>
+      <%= link_to user_full_name(current_user), current_user, id: "logo" %>
+    <% end %>
     
     <!-- Upper nav bar -->
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   root_path %></li> <!-- Home link -->
-        <li><%= link_to "Help",   help_path %></li> <!-- Help link -->
+        <li><%= link_to "Home", home_page %></li> <!-- Home link -->
+        <li><%= link_to "Help", help_path %></li> <!-- Help link -->
         
         <!-- Determines what links to display on the drop down depending on if the user is logged in or not -->
         <% if logged_in? %>

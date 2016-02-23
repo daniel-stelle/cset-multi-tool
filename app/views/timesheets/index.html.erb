@@ -1,0 +1,16 @@
+<% provide(:title, "Timesheets") %>
+<div class="row center">
+  <aside class="col-md-6 col-md-offset-3">
+    <h1><%= role_header_text %></h1>
+    
+    <% if @timesheets.any? %>
+      <ul class="timesheets">
+        <%= render @timesheets %>
+      </ul>
+    <% else %>
+      <h2>No timesheets to display.</h2>
+    <% end %>
+    
+    <%= link_to "Add new timesheet", user_timesheets_path(user_id: current_user.id, role_id: @role), method: :create, class: "btn btn-primary" %>
+  </aside>
+</div>

@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:show, :edit, :update]
   
   def show
+    @user = current_user
+    #@timesheet = Timesheet.find(params[:role_id])
   end
   
   def new
@@ -12,6 +14,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    
     if @user.save
       flash[:success] = "Student successfully added."
       redirect_to root_url
@@ -36,7 +39,9 @@ class UsersController < ApplicationController
     
     def user_params
       params.require(:user).permit(:firstName, :lastName, :email,
-                                   :password, :password_confirmation, role_attributes: [:id, :tech, :ta_grader, :checkout, :user_id])
+                                   :password, :password_confirmation,
+                                   role_attributes: [:id, :tech, :ta_grader, :checkout, :user_id],
+                                   timesheet_attributes: [:id, :role_id])
     end
     
     # Before filters
@@ -45,7 +50,7 @@ class UsersController < ApplicationController
     def logged_in_user
       unless logged_in?
         store_location
-        flash[:danger] = "Please log in."
+        flash[:danger] = "Stop trying to hack the site, asshole!"
         redirect_to login_url
       end
     end

@@ -1,0 +1,13 @@
+<div class="role_options">
+  <h3>Lab Technician</h3>
+  <div class="links list-group">
+    <%= form_for @timesheet do |f| %>
+      <%= f.label :timesheet %>
+      <!--<%= #f.link_to "Diagnostic Log", class: "list-group-item btn btn-primary link-item" %>-->
+      
+      <!--<% #unless @user.role.checkout? %>-->
+        <!--<%= #f.link_to "Checkout Log", class: "list-group-item btn btn-primary link-item" %>-->
+      <!--<% #end %>-->
+    <% end %>
+  </div>
+</div>

@@ -11,19 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131051135) do
+ActiveRecord::Schema.define(version: 20160210025444) do
 
   create_table "roles", force: :cascade do |t|
-    t.boolean  "tech"
-    t.boolean  "checkout"
-    t.boolean  "ta_grader"
-    t.boolean  "supervisor"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "tech",       default: false
+    t.boolean  "checkout",   default: false
+    t.boolean  "ta_grader",  default: false
+    t.boolean  "supervisor", default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "user_id"
   end
 
   add_index "roles", ["user_id"], name: "index_roles_on_user_id"
+
+  create_table "timesheet_rows", force: :cascade do |t|
+    t.integer  "timesheet_id"
+    t.date     "date_worked"
+    t.datetime "time_in"
+    t.datetime "time_out"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "timesheet_rows", ["timesheet_id"], name: "index_timesheet_rows_on_timesheet_id"
+
+  create_table "timesheets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id",    default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "timesheets", ["user_id"], name: "index_timesheets_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "firstName"

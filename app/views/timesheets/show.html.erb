@@ -1,0 +1,11 @@
+<% provide(:title, "Timesheet") %>
+<div class="row center">
+  <h1>Timesheet</h1>
+  
+  <!-- "Clock in" and "Clock out" buttons -->
+  <%= link_to "Clock In",  clock_in_user_timesheet_path(id: @timesheet.id),  method: :post, class: "btn btn-primary" %>
+  <%= link_to "Clock Out", clock_out_user_timesheet_path(id: @timesheet.id), method: :post, class: "btn btn-primary" %>
+  
+  <!-- Timesheet table -->
+  <%= render 'table' %>
+</div>

@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
-  has_one :role, dependent: :destroy
+  has_one  :role,       dependent: :destroy
+  has_many :timesheets, dependent: :nullify
   
   accepts_nested_attributes_for :role
+  accepts_nested_attributes_for :timesheets
   
   attr_accessor :remember_token
   
@@ -59,6 +61,7 @@ class User < ActiveRecord::Base
   end
      
   private
+  
     def down_case_email
       self.email = email.downcase
     end

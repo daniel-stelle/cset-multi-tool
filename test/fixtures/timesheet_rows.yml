@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timesheet_id: 
+  date_worked: 
+  time_in: 
+  time_out: 
+
+two:
+  timesheet_id: 
+  date_worked: 
+  time_in: 
+  time_out: 
