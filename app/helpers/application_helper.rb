@@ -18,6 +18,7 @@ module ApplicationHelper
     time.strftime("%I:%M %p")
   end
   
+  # Show the date in MM-DD-YY format
   def show_date(date)
     date.strftime("%m-%d-%Y")
   end
@@ -32,7 +33,7 @@ module ApplicationHelper
     ts_row.time_out?
   end
   
-  # Determines the home page to go to depending on log in status
+  # Determines the "home" page to go to depending on log in status
   def home_page 
     logged_in? ? current_user : root_path
   end

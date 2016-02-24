@@ -1,0 +1,25 @@
+<% provide(:title, "Edit Timesheet Row") %>
+<h1>Update Timesheet Row</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@row) do |f| %>
+      <%= f.label :date_worked %>
+      <%= f.text_field :date_worked, class: 'form-control' %>
+      
+      <%= f.label :hour_in %>
+      <%= f.number_field :hour_in, min: 0, max: 24, class: 'form-control' %>
+      
+      <%= f.label :min_in %>
+      <%= f.number_field :min_in, min: 0, max: 59, class: 'form-control' %>
+      
+      <%= f.label :hour_out %>
+      <%= f.number_field :hour_out, min: 0, max: 24, class: 'form-control' %>
+      
+      <%= f.label :min_out %>
+      <%= f.number_field :min_out, min: 0, max: 59, class: 'form-control' %>
+      
+      <%= f.submit "Save Changes", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

@@ -13,15 +13,8 @@ Rails.application.routes.draw do
         post 'clock_in'      => 'timesheets#clock_in'
         post 'clock_out'     => 'timesheets#clock_out'
       end
-      #resources :timesheet_rows
     end
   end
 
-
-
   resources :timesheet_rows, except: [:new, :create]
-
-
-
-
 end

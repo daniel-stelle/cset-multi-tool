@@ -10,7 +10,7 @@
     <td><%= calc_hours(timesheet_row.time_in, timesheet_row.time_out) %></td>
     
     <!-- Add link to edit row -->
-    <td class="links"><%= link_to "edit", edit_timesheet_row_path(timesheet_row), class: "something" %></td>
+    <td class="links"><%= link_to "edit", edit_timesheet_row_path(timesheet_row, user_id: params[:user_id], timesheet_id: params[:id]), class: "something" %></td>
   <% else %>
     <td>-</td>
     <td>-</td>
