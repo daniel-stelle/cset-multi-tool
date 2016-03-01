@@ -4,7 +4,7 @@
     <h1><%= role_header_text %></h1>
     
     <% if @timesheets.any? %>
-      <ul class="timesheets">
+      <ul class="list-group timesheet-button">
         <%= render @timesheets %>
       </ul>
     <% else %>
