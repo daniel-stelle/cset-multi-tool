@@ -3,8 +3,8 @@
   <h1>Timesheet</h1>
   
   <!-- "Clock in" and "Clock out" buttons -->
-  <%= link_to "Clock In",  clock_in_user_timesheet_path(id: @timesheet.id),  method: :post, class: "btn btn-success clk-btn" %>
-  <%= link_to "Clock Out", clock_out_user_timesheet_path(id: @timesheet.id), method: :post, class: "btn btn-danger clk-btn" %>
+  <%= link_to "Clock In",  clock_in_timesheet_path(id: @timesheet.id),  method: :post, class: "btn btn-success clk-btn" %>
+  <%= link_to "Clock Out", clock_out_timesheet_path(id: @timesheet.id), method: :post, class: "btn btn-danger clk-btn" %>
   
   <!-- Timesheet table -->
   <%= render 'table' %>

@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  site_title: "CSET Multi-tool Application"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      no_space: "%d%m%Y"
+  time:
+    formats:
+      default: "%I:%M %p"
+      
+  activerecord:
+    attributes:
+      role:
+        base: ''

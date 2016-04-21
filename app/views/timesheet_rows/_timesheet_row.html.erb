@@ -1,16 +1,16 @@
 <tr>
-  <td class="col-md-2"><%= show_date(timesheet_row.date_worked) %></td> <!-- Date worked -->
-  <td class="col-md-2"><%= show_time(timesheet_row.time_in) %></td>     <!-- Time clocked in -->
+  <td class="col-md-2"><%= l timesheet_row.date_worked %></td> <!-- Date worked -->
+  <td class="col-md-2"><%= l timesheet_row.time_in.in_time_zone %></td>     <!-- Time clocked in -->
   
   <!-- If the user is currently clocked out, --
     -- display time out and hours worked,    --
     -- otherwise, display nothing.           -->
   <% if clocked_out?(timesheet_row) %>
-    <td class="col-md-2"><%= show_time(timesheet_row.time_out) %></td>
+    <td class="col-md-2"><%= l timesheet_row.time_out.in_time_zone %></td>
     <td class="col-md-2"><%= calc_hours(timesheet_row.time_in, timesheet_row.time_out) %></td>
     
     <!-- Add link to edit row -->
-    <td class="links col-md-1"><%= link_to "edit", edit_timesheet_row_path(timesheet_row, user_id: params[:user_id], timesheet_id: params[:id]), class: "something" %></td>
+    <td class="links col-md-1"><%= link_to "edit", edit_timesheet_row_path(timesheet_row, user_id: params[:user_id], timesheet_id: params[:id]) %></td>
   <% else %>
     <td>-</td>
     <td>-</td>

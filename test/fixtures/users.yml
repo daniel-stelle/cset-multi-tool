@@ -1,11 +1,12 @@
 daniel:
-  id: 1
+  id:              1
   firstName:       Dan
   lastName:        Stelle
   email:           dan.stelle@oit.edu
   password_digest: <%= User.digest('password') %>
   
 archer:
+  id:              2
   firstName:       Sterling
   lastName:        Archer
   email:           sterling.archer@oit.edu

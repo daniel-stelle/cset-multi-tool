@@ -2,7 +2,7 @@
   <div class="container">
     <!-- Logo button (top left) -->
     <% if logged_in? %>
-      <%= link_to user_full_name(current_user), current_user, id: "logo" %>
+      <%= link_to current_user.full_name, current_user, id: "logo" %>
     <% end %>
     
     <!-- Upper nav bar -->
@@ -13,8 +13,6 @@
         
         <!-- Determines what links to display on the drop down depending on if the user is logged in or not -->
         <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li> <!-- All Users link -->
-          
           <!-- Dropdown menu -->
           <li class="dropdown">
             <!-- Dropdown button with down caret-->

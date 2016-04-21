@@ -1,10 +1,30 @@
 <% provide(:title, 'Add Student') %>
 <h1>Add Student</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
     <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
+    
+      <!-- if you want this function to work properly you need alter the shared
+           error messages partial to accept any object not just an @user (change
+           all instances of @user to object) and then send an object to the 
+           partial.  < %= render ..., object: f.object %>  then it will be able
+           to process error for any type of object not just a user -->
+      <%= render 'shared/error_messages', object: f.object %>
+      
+      <!-- Hidden field will take the supervisor_id assigned in the temporary
+           @user object that was created in the 'new' function when this page
+           was called.  The particlar @user instances is essentially destoryed
+           when the user clicks submit as the 'create' function creates a new
+           instance of the @user object i.e. our supervisor_id is lost. -->
+      <%= f.hidden_field :supervisor_id, :supervisor_id => @user.supervisor_id %>
+      <!-- now when the page is submitted the hidden field is attached to the
+           user_params and will be added to the new @user object when its
+           created.  From here you can set up and after_create callback to 
+           establish the relationship record or better yet create a function
+           that uses the current_user since that is the behavior we want and
+           call current_user.add_worker(@user) in the controller if the
+           record was saved successfully. -->
     
       <%= f.label :firstName %>
       <%= f.text_field :firstName, class: 'form-cotrol' %>
@@ -18,35 +38,35 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-cotrol' %>
 
-      <%= f.label :password_confirmation, "Password Confirmation" %>
+      <%= f.label :password_confirmation, 'Password Confirmation' %>
       <%= f.password_field :password_confirmation, class: 'form-cotrol' %>
       
-      <div class="role_box">
+      <div class='role_box'>
         <h2>Student Worker Roles</h2>
         
-        <%= f.fields_for :role do |builder| %>
+        <%= f.fields_for :role do |ff| %>
           <!-- Lab Technician role checkbox -->
-          <%= builder.label :tech, class: "checkbox inline" do %>
-            <%= builder.check_box :tech %>
+          <%= ff.label :tech, class: 'checkbox inline' do %>
+            <%= ff.check_box :tech %>
             <span>Lab Technician</span>
           <% end %>
           
           <!-- Equipment Checkout role checkbox -->
-          <%= builder.label :checkout, class: "checkbox inline" do %>
-            <%= builder.check_box :checkout %>
+          <%= ff.label :checkout, class: 'checkbox inline' do %>
+            <%= ff.check_box :checkout %>
             <span>Equipment Checkout</span>
           <% end %>
           
           <!-- Lab TA/Grader role checkbox -->
-          <%= builder.label :ta_grader, class: "checkbox inline" do %>
-            <%= builder.check_box :ta_grader %>
+          <%= ff.label :ta_grader, class: 'checkbox inline' do %>
+            <%= ff.check_box :ta_grader %>
             <span>Lab TA/Grader</span>
           <% end %>
           
         <% end %>
       </div>
 
-      <%= f.submit "Add Student Worker", class: "btn btn-primary" %>
+      <%= f.submit 'Add Student Worker', class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>

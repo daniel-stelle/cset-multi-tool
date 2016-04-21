@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":0,"end_pos":6},"message":"Missing top-level module documentation comment.","cop_name":"Style/Documentation","status":"unsupported"},{"severity":"convention","location":{"begin_pos":483,"end_pos":489},"message":"Trailing whitespace detected.","cop_name":"Style/TrailingWhitespace","status":"uncorrected"}]

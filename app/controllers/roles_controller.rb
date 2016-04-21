@@ -8,9 +8,9 @@ class RolesController < ApplicationController
     @role = Role.new(role_params)
     
     if(@role.save)
-      flash[:success] = "it worked"
+      flash[:success] = 'it worked'
     else
-      flash[:danger] = "role not created"
+      flash[:danger] = 'role not created'
     end
   end
   

@@ -1,0 +1,10 @@
+<tr>
+  <td class="col-md-2"><%= user.full_name %></td>
+  <td class="col-md-2"><%= user.email %></td>
+  <td class="links col-md-1">
+    <%= link_to "Remove worker",
+        relationship_path(Relationship.find_by(supervisor_id: current_user.id,
+                                               worker_id: user.id).id), 
+        method: :delete %>
+  </td>
+</tr>

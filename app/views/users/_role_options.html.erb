@@ -1,0 +1,15 @@
+<% if @user.role.tech? %>
+  <%= render 'tech' %>
+<% end %>
+
+<% if @user.role.checkout? %>
+  <%= render 'checkout' %>
+<% end %>
+
+<% if @user.role.ta_grader?  %>
+  <%= render 'ta_grader' %>
+<% end %>
+
+<% if @user.role.supervisor?  %>
+  <%= render 'supervisor' %>
+<% end %>

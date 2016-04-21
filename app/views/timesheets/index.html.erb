@@ -11,6 +11,6 @@
       <h2>No timesheets to display.</h2>
     <% end %>
     
-    <%= link_to "Add new timesheet", user_timesheets_path(user_id: current_user.id, role_id: @role), method: :create, class: "btn btn-primary" %>
+    <%= link_to "Add new timesheet", timesheets_path(user_id: current_user.id, role_id: @role), method: :create, class: "btn btn-primary" %>
   </aside>
 </div>

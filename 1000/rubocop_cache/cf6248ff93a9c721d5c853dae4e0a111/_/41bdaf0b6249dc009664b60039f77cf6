@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":617,"end_pos":626},"message":"Use snake_case for variable names.","cop_name":"Style/VariableName","status":"unsupported"},{"severity":"convention","location":{"begin_pos":639,"end_pos":647},"message":"Use snake_case for variable names.","cop_name":"Style/VariableName","status":"unsupported"}]

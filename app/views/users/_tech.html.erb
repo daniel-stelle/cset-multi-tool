@@ -1,7 +1,7 @@
 <div class="role_options">
   <h3>Lab Technician</h3>
   <div class="list-group">
-    <%= link_to "Timesheets", user_timesheets_path(@user, role_id: 0), class: "list-group-item btn btn-primary" %>
+    <%= link_to "Timesheets", timesheets_path(user_id: @user.id, role_id: 0), class: "list-group-item btn btn-primary" %>
     <%= link_to "Diagnostic Log", '#', class: "list-group-item btn btn-primary" %>
     
     <% unless @user.role.checkout? %>

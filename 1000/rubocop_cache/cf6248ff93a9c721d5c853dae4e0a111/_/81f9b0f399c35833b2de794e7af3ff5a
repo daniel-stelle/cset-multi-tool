@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":266,"end_pos":268},"message":"Trailing whitespace detected.","cop_name":"Style/TrailingWhitespace","status":"uncorrected"},{"severity":"convention","location":{"begin_pos":570,"end_pos":570},"message":"Final newline missing.","cop_name":"Style/TrailingBlankLines","status":"uncorrected"}]
